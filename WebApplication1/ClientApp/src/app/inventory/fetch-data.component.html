@@ -1,0 +1,26 @@
+<h1 id="tableLabel">Product Inventory</h1>
+
+<p *ngIf="!inventories"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="inventories">
+  <thead>
+    <tr>
+      <th>Request Id</th>
+      <th>Inventory Id</th>
+      <th>Inventory Name</th>
+      <th>Total Kernels</th>
+      <th>Requested Kernels</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of inventories">
+      <td>{{ product.requestId}}</td>
+      <td>{{ product.inventoryId }}</td>
+      <td>{{ product.inventoryName }}</td>
+      <td>{{ product.totalKernels }}</td>
+      <td>{{ product.requestedKernels }}</td>
+      <td>{{ product.status }}</td>
+    </tr>
+  </tbody>
+</table>
